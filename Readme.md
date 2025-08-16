@@ -2,6 +2,9 @@
 
 A classic Pong/Ping-Pong game implementation written in x86 Assembly language for the Embedded Systems course project (2025/1).
 
+<img width="1004" height="776" alt="image" src="https://github.com/user-attachments/assets/596e0ac7-3844-4e37-9d3b-ef3e4a69b031" />
+
+
 ## Author
 
 **João Gabriel Santos Custódio**  
