@@ -680,10 +680,6 @@ end_line:
 		pop		bp
 		ret		8
 
-;Funcao caracter 
-		; escrito na posicao do cursor
-		; al= caracter a ser escrito
-		; cor definida na variavel cor
 caracter:
 	pushf
 	push 		ax
@@ -800,64 +796,64 @@ inf:
 plotar:	
 	mov		si,dx
 	add		si,ax
-	push    si			;coloca a abcisa x+xc na pilha
+	push    si			
 	mov		si,cx
 	add		si,bx
-	push    si			;coloca a ordenada y+yc na pilha
-	call plot_xy		;toma conta do segundo octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	add		si,dx
-	push    si			;coloca a abcisa xc+x na pilha
+	push    si			
 	mov		si,bx
 	sub		si,cx
-	push    si			;coloca a ordenada yc-y na pilha
-	call plot_xy		;toma conta do s�timo octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	add		si,cx
-	push    si			;coloca a abcisa xc+y na pilha
+	push    si			
 	mov		si,bx
 	add		si,dx
-	push    si			;coloca a ordenada yc+x na pilha
-	call plot_xy		;toma conta do segundo octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	add		si,cx
-	push    si			;coloca a abcisa xc+y na pilha
+	push    si			
 	mov		si,bx
 	sub		si,dx
-	push    si			;coloca a ordenada yc-x na pilha
-	call plot_xy		;toma conta do oitavo octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	sub		si,dx
-	push    si			;coloca a abcisa xc-x na pilha
+	push    si			
 	mov		si,bx
 	add		si,cx
-	push    si			;coloca a ordenada yc+y na pilha
-	call plot_xy		;toma conta do terceiro octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	sub		si,dx
-	push    si			;coloca a abcisa xc-x na pilha
+	push    si			
 	mov		si,bx
 	sub		si,cx
-	push    si			;coloca a ordenada yc-y na pilha
-	call plot_xy		;toma conta do sexto octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	sub		si,cx
-	push    si			;coloca a abcisa xc-y na pilha
+	push    si			
 	mov		si,bx
 	sub		si,dx
-	push    si			;coloca a ordenada yc-x na pilha
-	call plot_xy		;toma conta do quinto octante
+	push    si			
+	call plot_xy		
 	mov		si,ax
 	sub		si,cx
-	push    si			;coloca a abcisa xc-y na pilha
+	push    si			
 	mov		si,bx
 	add		si,dx
-	push    si			;coloca a ordenada yc-x na pilha
-	call plot_xy		;toma conta do quarto octante
+	push    si			
+	call plot_xy		
 
 	cmp		cx,dx
-	jb		fim_circle  ;se cx (y) est� abaixo de dx (x), termina     
-	jmp		stay		;se cx (y) est� acima de dx (x), continua no loop
+	jb		fim_circle  
+	jmp		stay		
 
 
 fim_circle:
