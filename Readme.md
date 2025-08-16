@@ -7,7 +7,7 @@ A classic Pong/Ping-Pong game implementation written in x86 Assembly language fo
 
 ## Author
 
-**João Gabriel Santos Custódio**  
+**João Gabriel Santos Custodio**  
 Embedded Systems Laboratory Project - 2025/1
 
 ## Description
