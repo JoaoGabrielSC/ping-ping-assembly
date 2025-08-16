@@ -885,12 +885,12 @@ full_circle:
 
 	mov		si,bx
 	sub		si,cx
-	push    ax			;coloca xc na pilha			
-	push	si			;coloca yc-r na pilha
+	push    ax			
+	push	si
 	mov		si,bx
 	add		si,cx
-	push	ax		;coloca xc na pilha
-	push	si		;coloca yc+r na pilha
+	push	ax
+	push	si
 	call line
 
 
@@ -901,22 +901,22 @@ full_circle:
 stay_full:				;loop
 	mov		si,di
 	cmp		si,0
-	jg		inf_full       ;caso d for menor que 0, seleciona pixel superior (n�o  salta)
-	mov		si,dx		;o jl � importante porque trata-se de conta com sinal
-	sal		si,1		;multiplica por doi (shift arithmetic left)
+	jg		inf_full       	;d<0 -> select superior pixel
+	mov		si,dx
+	sal		si,1
 	add		si,3
-	add		di,si     ;nesse ponto d=d+2*dx+3
-	inc		dx		;incrementa dx
+	add		di,si     		;d=d+2*dx+3
+	inc		dx				;incrementa dx
 	jmp		plotar_full
 
 inf_full:	
 	mov		si,dx
-	sub		si,cx  		;faz x - y (dx-cx), e salva em di 
+	sub		si,cx  		;x - y (dx-cx) 
 	sal		si,1
 	add		si,5
-	add		di,si		;nesse ponto d=d+2*(dx-cx)+5
-	inc		dx		;incrementa x (dx)
-	dec		cx		;decrementa y (cx)
+	add		di,si		;d=d+2*(dx-cx)+5
+	inc		dx			;incrementa x (dx)
+	dec		cx			;decrementa y (cx)
 
 plotar_full:	
 	mov		si,ax
